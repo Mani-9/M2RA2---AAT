@@ -16,7 +16,7 @@
 
 <body>
     <header>
-        <div class="collapse " id="navbarToggleExternalContent" data-bs-theme="dark">
+        <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
             <div class="colornav2 p-4">
                 <ul class=" nav ">
                     <li class="nav-item">
@@ -24,9 +24,9 @@
                             Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="<?= base_url('ver_clientes')?>"><i
+                        <a class="nav-link text-white" href="<?= base_url('ver_hoteles')?>"><i
                                 class="bi bi-people-fill"></i>
-                            clientes</a>
+                            Hoteles</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="<?= base_url('ver_reservaciones')?>"><i
@@ -66,20 +66,20 @@
             <table class="table table-success table-striped border border-dark">
                 <thead class="table-dark ">
                     <tr class="text-center">
-                        <th><i class="bi bi-buildings"></i> ID Cliente: </th>
-                        <th><i class="bi bi-building"></i> Nombre Completo: </th>
-                        <th><i class="bi bi-telephone-inbound-fill"></i> Nit: </th>
-                        <th><i class="bi bi-signpost-split"></i> Telefono: </th>
-                        <th><i class="bi bi-compass"></i> Correo electronico: </th>
-                        <th><i class="bi bi-tags"></i> Direccion: </th>
-                        <th><i class="bi bi-person-badge-fill"></i> Contraseña: </th>
+                        <th><i class="bi bi-file-person-fill"></i> ID Cliente: </th>
+                        <th><i class="bi bi-person-vcard"></i> Nombre Completo: </th>
+                        <th><i class="bi bi-bank"></i> Nit: </th>
+                        <th><i class="bi bi-telephone"></i> Telefono: </th>
+                        <th><i class="bi bi-envelope-at-fill"></i> Correo electronico: </th>
+                        <th><i class="bi bi-signpost-split"></i> Direccion: </th>
+                        <th><i class="bi bi-file-lock2"></i> Contraseña: </th>
                         <th><i class="bi bi-pencil"></i> / <i class="bi bi-trash3-fill"></i> Accion: </th>
                     </tr>
                 </thead>
                 <?php
             foreach($datos as $clientes ):
         ?>
-                <tbody>
+                <tbody class="text-center">
                     <tr>
                         <td>
                             <?php echo $clientes['cliente_id'] ?>
