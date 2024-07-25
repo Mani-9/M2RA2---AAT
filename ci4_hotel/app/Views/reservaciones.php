@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="<?= base_url('css/diseno.css')?>">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 
 </head>
 
@@ -37,20 +37,23 @@
             </div>
         </div>
         <nav class="navbar colornav">
-            <div class="container-fluid >
+            <div class="container-fluid ">
                 <div class=" d-flex justify-content-between align-items-center w-100">
-                <p class="mb-0 text-white"><span class="material-symbols-outlined">
-                        sailing
-                    </span> M2RA2 - AAT BASE DE DATOS HOTEL</p>
-                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+                    <p class="mb-0 text-white"><span class="material-symbols-outlined">
+                            sailing
+                        </span> M2RA2 - AAT BASE DE DATOS HOTEL</p>
+                    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
     <main class="p-4">
         <div class="d-flex justify-content-center ">
             <h1 class="p-2 col-12 col-md-6 col-lg-4 text-center">Reservaciones</h1>
@@ -100,8 +103,8 @@
                             <?php echo $reservaciones['usuario_id'] ?>
                         </td>
                         <td>
-                            <a href="<?= base_url('buscar_reservacion/').$reservaciones['reservacion_id']?>" class="btn btn-info"><i
-                                    class="bi bi-pencil-square"></i>Editar</a>
+                            <a href="<?= base_url('buscar_reservacion/').$reservaciones['reservacion_id']?>"
+                                class="btn btn-info"><i class="bi bi-pencil-square"></i>Editar</a>
                             <a href="<?= base_url('eliminar_reservacion/').$reservaciones['reservacion_id']?>"
                                 class="btn btn-danger"><i class="bi bi-trash-fill"></i>Eliminar</a>
                         </td>

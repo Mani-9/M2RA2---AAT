@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ClientesModel;
 
+
 class ClientesController extends BaseController
 {
     public function index(): string //muestra todos los clientes
@@ -33,7 +34,7 @@ class ClientesController extends BaseController
     public function eliminarCliente($id=null)//elimina un cliente
     {
         $clientes = new ClientesModel();
-        $clientes->delete(['cliente_id',$id]);
+        $clientes->delete($id);
         return redirect()->route('ver_clientes');
     }
     public function buscarCliente($id=null){ //busca un cliente

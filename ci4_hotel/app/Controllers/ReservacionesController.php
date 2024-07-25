@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ReservacionesModel;
+use App\Models\DetalleReservacionModel;
 
 class ReservacionesController extends BaseController
 {
@@ -32,7 +33,7 @@ class ReservacionesController extends BaseController
     public function eliminarReservacion($id=null){ //elimina una reservacion
         
         $reservaciones = new ReservacionesModel();
-        $reservaciones->delete(['reservacion_id',$id]);
+        $reservaciones->delete($id);
         return redirect()->route('ver_reservaciones'); 
 
     }

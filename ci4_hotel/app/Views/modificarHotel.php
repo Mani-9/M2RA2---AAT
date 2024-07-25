@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="<?= base_url('css/diseno.css')?>">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 
 </head>
 
@@ -32,63 +32,80 @@
             </div>
         </div>
         <nav class="navbar colornav">
-            <div class="container-fluid >
+            <div class="container-fluid ">
                 <div class=" d-flex justify-content-between align-items-center w-100">
-                <p class="mb-0 text-white"><span class="material-symbols-outlined">
-                        sailing
-                    </span> M2RA2 - AAT BASE DE DATOS HOTEL</p>
-                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+                    <p class="mb-0 text-white"><span class="material-symbols-outlined">
+                            sailing
+                        </span> M2RA2 - AAT BASE DE DATOS HOTEL</p>
+                    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
     <main class="container p-4 d-flex justify-content-center ">
-        <div class="card mb-3 modcontainer " style="max-width: 540px;">
-            <div class="card-header text-center">
-                <h2>Modificar Hotel</h2>
-            </div>
-            <div class="card-body">
-                <form action="<?= base_url('modificar_hotel') ?>" method="post">
-                    <div class="mb-3">
-                        <label for="numIdHotel" class="form-label"><i class="bi bi-buildings"></i>ID Hotel </label>
-                        <input type="number" id="numIdHotel" name="numIdHotel" class="form-control" value="<?= $datos['hotel_id']; ?>" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtNombre" class="form-label"><i class="bi bi-building"></i> Nombre</label>
-                        <input type="text" id="txtNombre" name="txtNombre" class="form-control" value="<?= $datos['nombre']; ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtCorreoElectronico" class="form-label"><i class="bi bi-envelope-at"></i> Correo electronico</label>
-                        <input type="email" id="txtCorreoElectronico" name="txtCorreoElectronico" class="form-control" value="<?= $datos['correoelectronico']; ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="numTelefono" class="form-label"><i class="bi bi-telephone-inbound-fill"></i> Telefono</label>
-                        <input type="number" id="numTelefono" name="numTelefono" class="form-control" value="<?= $datos['telefono']; ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtDireccion" class="form-label"><i class="bi bi-signpost-split"></i> Direccion</label>
-                        <input type="text" id="txtDireccion" name="txtDireccion" class="form-control" value="<?= $datos['direccion']; ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="numCiudad" class="form-label"><i class="bi bi-compass"></i> ID Ciudad</label>
-                        <input type="number" id="numCiudad" name="numCiudad" class="form-control" value="<?= $datos['ciudad_id']; ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="numCategoria" class="form-label"><i class="bi bi-tags"></i> ID Categoria </label>
-                        <input type="number" id="numCategoria" name="numCategoria" class="form-control" value="<?= $datos['categoria_id']; ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="numUsuario" class="form-label"><i class="bi bi-person-badge-fill" value="<?= $datos['usuario_id']; ?>"></i> ID Usuario </label>
-                        <input type="number" id="numUsuario" name="numUsuario" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <input type="submit" id="btnGuardarPlan" name="btnGuardarPlan" class="form-control">
-                    </div>
-                </form>
+        <div class="col-12 col-md-6">
+            <div class="card mb-3 mod-form " style="max-width: 540px;">
+                <div class="card-header text-center">
+                    <h2>Modificar Hotel</h2>
+                </div>
+                <div class="card-body">
+                    <form action="<?= base_url('modificar_hotel') ?>" method="post">
+                        <div class="mb-3">
+                            <label for="numIdHotel" class="form-label"><i class="bi bi-buildings"></i>ID Hotel </label>
+                            <input type="number" id="numIdHotel" name="numIdHotel" class="form-control"
+                                value="<?= $datos['hotel_id']; ?>" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtNombre" class="form-label"><i class="bi bi-building"></i> Nombre</label>
+                            <input type="text" id="txtNombre" name="txtNombre" class="form-control"
+                                value="<?= $datos['nombre']; ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtCorreoElectronico" class="form-label"><i class="bi bi-envelope-at"></i>
+                                Correo electronico</label>
+                            <input type="email" id="txtCorreoElectronico" name="txtCorreoElectronico"
+                                class="form-control" value="<?= $datos['correoelectronico']; ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="numTelefono" class="form-label"><i class="bi bi-telephone-inbound-fill"></i>
+                                Telefono</label>
+                            <input type="number" id="numTelefono" name="numTelefono" class="form-control"
+                                value="<?= $datos['telefono']; ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtDireccion" class="form-label"><i class="bi bi-signpost-split"></i>
+                                Direccion</label>
+                            <input type="text" id="txtDireccion" name="txtDireccion" class="form-control"
+                                value="<?= $datos['direccion']; ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="numCiudad" class="form-label"><i class="bi bi-compass"></i> ID Ciudad</label>
+                            <input type="number" id="numCiudad" name="numCiudad" class="form-control"
+                                value="<?= $datos['ciudad_id']; ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="numCategoria" class="form-label"><i class="bi bi-tags"></i> ID Categoria
+                            </label>
+                            <input type="number" id="numCategoria" name="numCategoria" class="form-control"
+                                value="<?= $datos['categoria_id']; ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="numUsuario" class="form-label"><i class="bi bi-person-badge-fill"
+                                    value="<?= $datos['usuario_id']; ?>"></i> ID Usuario </label>
+                            <input type="number" id="numUsuario" name="numUsuario" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <input type="submit" id="btnGuardarPlan" name="btnGuardarPlan" class="form-control">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
