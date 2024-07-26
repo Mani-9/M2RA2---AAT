@@ -57,4 +57,28 @@ class ReservacionesController extends BaseController
         return redirect()->route('ver_reservaciones'); 
 
     }
+    public function ordenarReservacionesAcendente(): string //ordena los reservaciones por id
+    {
+        $reservaciones = new reservacionesModel();
+        $datos['datos'] = $reservaciones->orderBy('reservacion_id', 'ASC')->findAll();
+        return view('reservaciones', $datos);
+    }
+    public function ordenarreservacionesDecendente(): string //ordena los reservaciones por id
+    {
+        $reservaciones = new reservacionesModel();
+        $datos['datos'] = $reservaciones->orderBy('reservacion_id', 'DESC')->findAll();
+        return view('reservaciones', $datos);
+    } 
+    public function ordenarClientesAcendente(): string //ordena los reservaciones por id
+    {
+        $reservaciones = new reservacionesModel();
+        $datos['datos'] = $reservaciones->orderBy('cliente_id', 'ASC')->findAll();
+        return view('reservaciones', $datos);
+    }
+    public function ordenarClienteDecendente(): string //ordena los reservaciones por id
+    {
+        $reservaciones = new reservacionesModel();
+        $datos['datos'] = $reservaciones->orderBy('cliente_id', 'DESC')->findAll();
+        return view('reservaciones', $datos);
+    } 
 }

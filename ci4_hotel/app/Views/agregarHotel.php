@@ -55,50 +55,50 @@
                 <div class="card-header text-center">
                     <h2>Nuevo Hotel</h2>
                 </div>
-                <div class="card-body">
-                    <form action="agregar_hotel" method="post">
-                        <div class="mb-3">
-                            <label for="numIdHotel" class="form-label"><i class="bi bi-buildings"></i> ID Hotel</label>
-                            <input type="number" id="numIdHotel" name="numIdHotel" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtNombre" class="form-label"><i class="bi bi-building"></i> Nombre</label>
-                            <input type="text" id="txtNombre" name="txtNombre" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtCorreoElectronico" class="form-label"><i class="bi bi-envelope-at"></i>
-                                Correo electrónico</label>
-                            <input type="email" id="txtCorreoElectronico" name="txtCorreoElectronico"
-                                class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="numTelefono" class="form-label"><i class="bi bi-telephone-inbound-fill"></i>
-                                Teléfono</label>
-                            <input type="number" id="numTelefono" name="numTelefono" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtDireccion" class="form-label"><i class="bi bi-signpost-split"></i>
-                                Dirección</label>
-                            <input type="text" id="txtDireccion" name="txtDireccion" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="numCiudad" class="form-label"><i class="bi bi-compass"></i> ID Ciudad</label>
-                            <input type="number" id="numCiudad" name="numCiudad" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="numCategoria" class="form-label"><i class="bi bi-tags"></i> ID Categoría</label>
-                            <input type="number" id="numCategoria" name="numCategoria" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="numUsuario" class="form-label"><i class="bi bi-person-badge-fill"></i> ID
-                                Usuario</label>
-                            <input type="number" id="numUsuario" name="numUsuario" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <input type="submit" id="btnGuardarPlan" name="btnGuardarPlan" class="form-control">
-                        </div>
-                    </form>
-                </div>
+                    <div class="card-body">
+                        <form action="<?= base_url('agregar_hotel')?>"   method="post">
+                            <div class="mb-3">
+                                <label for="numIdHotel" class="form-label"><i class="bi bi-buildings"></i> ID Hotel</label>
+                                <input type="number" id="numIdHotel" name="numIdHotel" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtNombre" class="form-label"><i class="bi bi-building"></i> Nombre</label>
+                                <input type="text" id="txtNombre" name="txtNombre" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtCorreoElectronico" class="form-label"><i class="bi bi-envelope-at"></i>
+                                    Correo electrónico</label>
+                                <input type="email" id="txtCorreoElectronico" name="txtCorreoElectronico"
+                                    class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="numTelefono" class="form-label"><i class="bi bi-telephone-inbound-fill"></i>
+                                    Teléfono</label>
+                                <input type="number" id="numTelefono" name="numTelefono" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtDireccion" class="form-label"><i class="bi bi-signpost-split"></i>
+                                    Dirección</label>
+                                <input type="text" id="txtDireccion" name="txtDireccion" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="numCiudad" class="form-label"><i class="bi bi-compass"></i> ID Ciudad</label>
+                                <input type="number" id="numCiudad" name="numCiudad" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="numCategoria" class="form-label"><i class="bi bi-tags"></i> ID Categoría</label>
+                                <input type="number" id="numCategoria" name="numCategoria" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="numUsuario" class="form-label"><i class="bi bi-person-badge-fill"></i> ID
+                                    Usuario</label>
+                                <input type="number" id="numUsuario" name="numUsuario" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <input type="submit" id="btnGuardarPlan" name="btnGuardarPlan" class="form-control">
+                            </div>
+                        </form>
+                    </div>
             </div>
         </div>
     </main>

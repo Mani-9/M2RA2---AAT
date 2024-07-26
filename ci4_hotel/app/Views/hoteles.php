@@ -59,12 +59,28 @@
         <div class="d-flex justify-content-center ">
             <h1 class="p-2 col-12 col-md-6 col-lg-4 text-center">Hoteles</h1>
         </div>
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-end flex-wrap">
             <a href="<?php echo base_url('agregar_hotel'); ?>"
-                class="btn btn-dark col-12 col-md-6 col-lg-4 mt-2 m-2 d-flex align-items-center">
+                class="btn btn-dark  mt-2 m-2 d-flex align-items-center ">
                 <i class="bi bi-house-add me-2"></i>
                 <h4 class="mb-0">Agregar nuevo Hotel</h4>
             </a>
+            <div class="dropdown">
+                <a class="btn btn-dark  mt-2 m-2 d-flex align-items-center dropdown-toggle" href="#" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-file-person-fill me-2"></i>
+                    <h4 class="mb-0">Ordenar hoteles</h4>
+                </a>
+                <ul class="dropdown-menu">
+                    <a class="btn mt-2 m-2 d-flex align-items-center "
+                        href="<?php echo base_url('ordenar_hotel_acendente') ?>">
+                        <h4 class="mb-0"><i class="bi bi-arrow-up-circle"></i> Acendente</h4>
+                    </a><a class="btn   mt-2 m-2 d-flex align-items-center "
+                        href="<?php echo base_url('ordenar_hotel_decendente') ?>">
+                        <h4 class="mb-0"><i class="bi bi-arrow-down-circle"></i> Decendente</h4>
+                    </a>
+                </ul>
+            </div>
         </div>
         <div class="table-responsive">
             <table class="table table-success table-striped border border-dark">

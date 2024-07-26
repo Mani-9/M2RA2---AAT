@@ -55,4 +55,16 @@ class HotelesController extends BaseController
         $hoteles->update($datos['hotel_id'],$datos);
         return redirect()->route('ver_hoteles');
     }
+    public function ordenarHotelesAcendente(): string //ordena los hoteles por id
+    {
+        $hoteles = new HotelesModel();
+        $datos['datos'] = $hoteles->orderBy('hotel_id', 'ASC')->findAll();
+        return view('hoteles', $datos);
+    }
+    public function ordenarHotelesDecendente(): string //ordena los hoteles por id
+    {
+        $hoteles = new HotelesModel();
+        $datos['datos'] = $hoteles->orderBy('hotel_id', 'DESC')->findAll();
+        return view('hoteles', $datos);
+    } 
 }
