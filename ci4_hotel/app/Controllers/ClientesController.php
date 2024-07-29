@@ -64,6 +64,23 @@ class ClientesController extends BaseController
         $datos['datos'] = $clientes->where('cliente_id',$id)->first();
         return view('modificarClientes',$datos);
     }
+    public function modificarClientes()
+    {   
+        $clientes = new ClientesModel();
+        $datos = [
+            'cliente_id'=>$this->request->getVar('numIdCliente'),
+            'nombre'=>$this->request->getVAR('txtNombre'),
+            'apellido'=>$this->request->getVAR('txtApellido'),
+            'nit'=>$this->request->getVAR('numNit'),
+            'telefono'=>$this->request->getVAR('numTelefono'),
+            'correo_electronico'=>$this->request->getVAR('txtCorreoElectronico'),
+            'direccion'=>$this->request->getVAR('txtDireccion'),
+            'contrasenia'=>$this->request->getVAR('numContrasena')
+         ];
+        $clientes = new ClientesModel();
+        $clientes->update($datos['cliente_id'],$datos);
+        return redirect()->route('ver_clientes'); 
+    }
     public function ordenarClientesAcendente(): string //ordena los clientes por id
     {
         $clientes = new ClientesModel();
