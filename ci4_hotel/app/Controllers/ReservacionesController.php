@@ -3,10 +3,10 @@
 namespace App\Controllers;
 
 use App\Models\ReservacionesModel;
-use App\Models\DetalleReservacionModel;
 
 class ReservacionesController extends BaseController
 {
+    protected $helpers = ['url', 'form'];
     public function index(): string //muestra todas las reservaciones
     {
         $reservaciones = new ReservacionesModel();
@@ -18,6 +18,46 @@ class ReservacionesController extends BaseController
     }
     public function agregarReservacion(){ //agrega una nueva reservacion
         $reservaciones = new ReservacionesModel();
+        $reglas =[
+            'numIdReservaciones'=>[
+                'label'=>'ID Reservaciones',
+                'rules'=>'required|is_unique[reservaciones.reservacion_id]',
+                'errors'=>[
+                    'required'=>'* El campo {field} es obligatorio.',
+                    'is_unique'=>'* El campo {field} debe ser único.'
+                ],
+            ],
+            'numIdCliente'=>[
+                'label'=>'ID Cliente',
+                'rules'=>'required|is_not_unique[clientes.cliente_id]',
+                'errors'=>[
+                    'required'=>'* El campo {field} es obligatorio.',
+                    'is_not_unique'=>'* Ingrese un Id de cliente valido'
+                ],
+            ],
+            'numIdHotel'=>[
+                'label'=>'ID Hotel',
+                'rules'=>'required|is_not_unique[hoteles.hotel_id]',
+                'errors'=>[
+                    'required'=>'* El campo {field} es obligatorio.',
+                    'is_not_unique'=>'* Ingrese un Id de hotel valido'
+                ],
+            ],
+            'numIdUsuario'=>[
+                'label'=>'ID Usuario',
+                'rules'=>'required|is_not_unique[usuarios.usuario_id]',
+                'errors'=>[
+                    'required'=>'* El campo {field} es obligatorio.',
+                    'is_not_unique'=>'* Ingrese un Id de usuario valido'
+                ],
+            ]
+        ];
+        
+        if (!$this->validate($reglas)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        echo 'Datos validados';
+        
         $datos = [
             'reservacion_id'=> $this->request->getVAR('numIdReservaciones'),
             'fecha'=> $this->request->getVAR('numFecha'),

@@ -49,44 +49,91 @@
     <div class="bg"></div>
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
-    <main class="container p-4 d-flex justify-content-center ">
-        <div class="col-12 col-md-6">
-            <div class="card mb-3 mod-form" style="max-width: 540px;">
+    <main class="container p-4 d-flex justify-content-center">
+        <div class="col-12 col-md-7">
+            <div class="card mb-3 mod-form">
                 <div class="card-header text-center">
-                    <h2>Nueva Reservacion</h2>
+                    <h2>Nueva Reservación</h2>
                 </div>
                 <div class="card-body">
                     <form action="<?= base_url('agregar_reservacion') ?>" method="post">
-                        <div class="mb-3">
-                            <label for="numIdReservaciones" class="form-label"><i class="bi bi-calendar4-week"></i> ID
-                                Reservaciones </label>
-                            <input type="number" id="numIdReservaciones" name="numIdReservaciones" class="form-control">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="numIdReservaciones" class="form-label">
+                                    <i class="bi bi-calendar4-week"></i> ID Reservaciones
+                                </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="number" id="numIdReservaciones" name="numIdReservaciones"
+                                    class="form-control" value="<?= set_value('numIdReservaciones'); ?>">
+                                <div class="text-danger"><?= validation_show_error('numIdReservaciones'); ?></div>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="numFecha" class="form-label"><i class="bi bi-calendar-event"></i> Fecha</label>
-                            <input type="date" id="numFecha" name="numFecha" class="form-control">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="numFecha" class="form-label">
+                                    <i class="bi bi-calendar-event"></i> Fecha
+                                </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="date" id="numFecha" name="numFecha" class="form-control">
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="numIdCliente" class="form-label"><i class="bi bi-file-person-fill"></i> ID
-                                Cliente</label>
-                            <input type="text" id="numIdCliente" name="numIdCliente" class="form-control">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="numIdCliente" class="form-label">
+                                    <i class="bi bi-file-person-fill"></i> ID Cliente
+                                </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" id="numIdCliente" name="numIdCliente" class="form-control"
+                                    value="<?= set_value('numIdCliente'); ?>">
+                                <div class="text-danger"><?= validation_show_error('numIdCliente'); ?></div>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="numIdHotel" class="form-label"><i class="bi bi-buildings"></i> Id Hotel</label>
-                            <input type="number" id="numIdHotel" name="numIdHotel" class="form-control">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="numIdHotel" class="form-label">
+                                    <i class="bi bi-buildings"></i> ID Hotel
+                                </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="number" id="numIdHotel" name="numIdHotel" class="form-control"
+                                    value="<?= set_value('numIdHotel'); ?>">
+                                <div class="text-danger"><?= validation_show_error('numIdHotel'); ?></div>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="txtDescipcion" class="form-label"><i class="bi bi-card-text"></i>
-                                Descripcion</label>
-                            <input type="text" id="txtDescipcion" name="txtDescipcion" class="form-control">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="txtDescipcion" class="form-label">
+                                    <i class="bi bi-card-text"></i> Descripción
+                                </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" id="txtDescipcion" name="txtDescipcion" class="form-control">
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="numIdUsuario" class="form-label"><i class="bi bi-file-person-fill"></i> ID
-                                Usuario</label>
-                            <input type="num" id="numIdUsuario" name="numIdUsuario" class="form-control">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="numIdUsuario" class="form-label">
+                                    <i class="bi bi-file-person-fill"></i> ID Usuario
+                                </label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="number" id="numIdUsuario" name="numIdUsuario" class="form-control"
+                                    value="<?= set_value('numIdUsuario'); ?>">
+                                <div class="text-danger"><?= validation_show_error('numIdUsuario'); ?></div>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <input type="submit" id="btnGuardarPlan" name="btnGuardarPlan" class="form-control">
+                        <div class="col-md-12 text-center btn-grad">
+                            <button type="submit" id="btnGuardarReservaciones" name="btnGuardarReservaciones"
+                                class="btn btn-light btn-block my-2">
+                                <i class="bi bi-building-add"></i> Agregar Reservación
+                            </button>
+                            <button type="reset" id="btnLimpiarFormulario" name="btnLimpiarFormulario"
+                                class="btn btn-light btn-block my-2">
+                                <i class="bi bi-x-circle"></i> Limpiar
+                            </button>
                         </div>
                     </form>
                 </div>

@@ -50,55 +50,107 @@
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
     <main class="container p-4 d-flex justify-content-center">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-7">
             <div class="card mb-3 mod-form">
                 <div class="card-header text-center">
-                    <h2>Nuevo Hotel</h2>
+                    <h2>Agregar nuevo hotel</h2>
                 </div>
-                    <div class="card-body">
-                        <form action="<?= base_url('agregar_hotel')?>"   method="post">
-                            <div class="mb-3">
-                                <label for="numIdHotel" class="form-label"><i class="bi bi-buildings"></i> ID Hotel</label>
-                                <input type="number" id="numIdHotel" name="numIdHotel" class="form-control">
+                <div class="card-body">
+                    <form action="<?= base_url('agregar_hotel')?>" method="post">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="numIdHotel" class="form-label"><i class="bi bi-buildings"></i> ID
+                                    Hotel</label>
                             </div>
-                            <div class="mb-3">
+                            <div class="col-md-9">
+                                <input type="number" id="numIdHotel" name="numIdHotel" class="form-control"
+                                    value="<?php echo set_value('numIdHotel'); ?>">
+                                <div class="text-danger"><?php echo validation_show_error('numIdHotel'); ?></div>
+                            </div>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
                                 <label for="txtNombre" class="form-label"><i class="bi bi-building"></i> Nombre</label>
+                            </div>
+                            <div class="col-md-9">
                                 <input type="text" id="txtNombre" name="txtNombre" class="form-control">
                             </div>
-                            <div class="mb-3">
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
                                 <label for="txtCorreoElectronico" class="form-label"><i class="bi bi-envelope-at"></i>
                                     Correo electrónico</label>
-                                <input type="email" id="txtCorreoElectronico" name="txtCorreoElectronico"
-                                    class="form-control">
                             </div>
-                            <div class="mb-3">
+                            <div class="col-md-9">
+                                <input type="email" id="txtCorreoElectronico" name="txtCorreoElectronico"
+                                    class="form-control" value="<?php echo set_value('txtCorreoElectronico'); ?>">
+                                <div class="text-danger"><?php echo validation_show_error('txtCorreoElectronico'); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
                                 <label for="numTelefono" class="form-label"><i class="bi bi-telephone-inbound-fill"></i>
                                     Teléfono</label>
+                            </div>
+                            <div class="col-md-9">
                                 <input type="number" id="numTelefono" name="numTelefono" class="form-control">
                             </div>
-                            <div class="mb-3">
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
                                 <label for="txtDireccion" class="form-label"><i class="bi bi-signpost-split"></i>
                                     Dirección</label>
+                            </div>
+                            <div class="col-md-9">
                                 <input type="text" id="txtDireccion" name="txtDireccion" class="form-control">
                             </div>
-                            <div class="mb-3">
-                                <label for="numCiudad" class="form-label"><i class="bi bi-compass"></i> ID Ciudad</label>
-                                <input type="number" id="numCiudad" name="numCiudad" class="form-control">
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="numCiudad" class="form-label"><i class="bi bi-compass"></i> ID
+                                    Ciudad</label>
                             </div>
-                            <div class="mb-3">
-                                <label for="numCategoria" class="form-label"><i class="bi bi-tags"></i> ID Categoría</label>
-                                <input type="number" id="numCategoria" name="numCategoria" class="form-control">
+                            <div class="col-md-9">
+                                <input type="number" id="numCiudad" name="numCiudad" class="form-control"
+                                    value="<?php echo set_value('numCiudad'); ?>">
+                                <div class="text-danger"><?php echo validation_show_error('numCiudad'); ?></div>
                             </div>
-                            <div class="mb-3">
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="numCategoria" class="form-label"><i class="bi bi-tags"></i> ID
+                                    Categoría</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="number" id="numCategoria" name="numCategoria" class="form-control"
+                                    value="<?php echo set_value('numCategoria'); ?>">
+                                <div class="text-danger"><?php echo validation_show_error('numCategoria'); ?></div>
+                            </div>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
                                 <label for="numUsuario" class="form-label"><i class="bi bi-person-badge-fill"></i> ID
                                     Usuario</label>
-                                <input type="number" id="numUsuario" name="numUsuario" class="form-control">
                             </div>
-                            <div class="mb-3">
-                                <input type="submit" id="btnGuardarPlan" name="btnGuardarPlan" class="form-control">
+                            <div class="col-md-9">
+                                <input type="number" id="numUsuario" name="numUsuario" class="form-control"
+                                    value="<?php echo set_value('numUsuario'); ?>">
+                                <div class="text-danger"><?php echo validation_show_error('numUsuario'); ?></div>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                        <div class="col-md-12 text-center btn-grad">
+                            <button type="submit" id="btnGuardarReservaciones" name="btnGuardarReservaciones"
+                                class="btn btn-light btn-block my-2">
+                                <i class="bi bi-building-add"></i> Agregar Hotel
+                            </button>
+                            <button type="reset" id="btnLimpiarFormulario" name="btnLimpiarFormulario"
+                                class="btn btn-light btn-block my-2">
+                                <i class="bi bi-x-circle"></i> Limpiar
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </main>

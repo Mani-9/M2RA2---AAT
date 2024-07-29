@@ -24,13 +24,11 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="<?= base_url('ver_clientes') ?>"><i
-                                class="bi bi-people-fill"></i>
-                            Clientes</a>
+                                class="bi bi-people-fill"></i> Clientes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="<?= base_url('ver_reservaciones') ?>"><i
-                                class="bi bi-person-rolodex"></i>
-                            Reservaciones</a>
+                                class="bi bi-person-rolodex"></i> Reservaciones</a>
                     </li>
                 </ul>
             </div>
@@ -54,16 +52,12 @@
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
     <main>
-        <div class="content">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="text-center mt-5">Bienvenido a la base de datos de hoteles</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <p class="text-center">En esta base de datos se podrá interactuar con los hoteles, clientes y
-                        reservaciones</p>
+        <div class="container  py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center contentmod">
+                    <h1 class="display-4 mb-4">Bienvenido a la base de datos de hoteles</h1>
+                    <p class="lead mb-4">En esta base de datos se podrá interactuar con los hoteles, clientes y
+                        reservaciones.</p>
                 </div>
             </div>
         </div>

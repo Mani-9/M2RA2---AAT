@@ -55,8 +55,12 @@
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
     <main class="p-4">
-        <div class="d-flex justify-content-center ">
-            <h1 class="p-2 col-12 col-md-6 col-lg-4 text-center">Reservaciones</h1>
+        <div class="container ">
+            <div class="row justify-content-center ">
+                <div class="col-md-6 text-center contentmod">
+                    <h1 class="display-4 ">Reservaciones</h1>
+                </div>
+            </div>
         </div>
         <div class="d-flex justify-content-end flex-wrap">
             <a href="<?php echo base_url('agregar_reservacion'); ?>"
@@ -92,7 +96,7 @@
                         <th><i class="bi bi-buildings"></i> ID Hotel: </th>
                         <th><i class="bi bi-card-text"></i> Descripcion </th>
                         <th><i class="bi bi-file-person-fill"></i> ID Usuario: </th>
-                        <th><i class="bi bi-pencil"></i> / <i class="bi bi-trash3-fill"></i> Accion: </th>
+                        <th><i class="bi bi-pencil"></i> / <i class="bi bi-trash3-fill"></i> Editar/Eliminar: </th>
                     </tr>
                 </thead>
                 <?php
@@ -121,9 +125,32 @@
                         </td>
                         <td>
                             <a href="<?= base_url('buscar_reservacion/').$reservaciones['reservacion_id']?>"
-                                class="btn btn-info"><i class="bi bi-pencil-square"></i>Editar</a>
-                            <a href="<?= base_url('eliminar_reservacion/').$reservaciones['reservacion_id']?>"
-                                class="btn btn-danger"><i class="bi bi-trash-fill"></i>Eliminar</a>
+                                class="btn btn-info"><i class="bi bi-pencil-square"></i></a>
+                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                data-hotel-id="<?= $reservaciones['reservacion_id'] ?>">
+                                <i class="bi bi-trash-fill"></i>
+                            </a>
+                            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-dark">
+                                            <h5 class="modal-title text-light" id="deleteModalLabel">Confirmar Eliminación</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ¿Estás seguro de que deseas eliminar este Cliente?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Cancelar</button>
+                                            <a href="<?= base_url('eliminar_reservacion/').$reservaciones['reservacion_id']?>"
+                                                class="btn btn-danger"><i class="bi bi-trash-fill"></i>Eliminar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </tbody>

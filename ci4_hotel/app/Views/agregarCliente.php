@@ -50,56 +50,101 @@
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
     <main class="container p-4 d-flex justify-content-center ">
-        <div class="col-12 col-md-6">
-            <div class="card mb-3 mod-form " style="max-width: 540px;">
+        <div class="col-12 col-md-7">
+            <div class="card mb-3 mod-form ">
                 <div class="card-header text-center">
                     <h2>Nuevo Cliente</h2>
                 </div>
-                <div class="card-body ">
-                    <form action="agregar_cliente" method="post" >
-                        <div class="mb-3">
-                            <label for="numIdCliente" class="form-label"><i class="bi bi-file-person-fill"></i>ID
-                                Cliente </label>
-                            <input type="number" id="numIdCliente" name="numIdCliente" class="form-control">
+                <div class="card-body">
+                    <form action="<?= base_url('agregar_cliente') ?>" method="post">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="numIdCliente" class="form-label"><i class="bi bi-file-person-fill"></i>ID
+                                    Cliente</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="number" id="numIdCliente" name="numIdCliente" class="form-control"
+                                    value="<?= set_value('numIdCliente'); ?>">
+                                <div class="text-danger"><?= validation_show_error('numIdCliente'); ?></div>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="txtNombre" class="form-label"><i class="bi bi-person-vcard"></i> Nombre</label>
-                            <input type="text" id="txtNombre" name="txtNombre" class="form-control">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="txtNombre" class="form-label"><i class="bi bi-person-vcard"></i>
+                                    Nombre</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" id="txtNombre" name="txtNombre" class="form-control">
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="txtApellido" class="form-label"><i class="bi bi-person-vcard"></i>
-                                Apellido</label>
-                            <input type="text" id="txtApellido" name="txtApellido" class="form-control">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="txtApellido" class="form-label"><i class="bi bi-person-vcard"></i>
+                                    Apellido</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" id="txtApellido" name="txtApellido" class="form-control">
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="numNit" class="form-label"><i class="bi bi-bank"></i> NIT</label>
-                            <input type="number" id="numNit" name="numNit" class="form-control">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="numNit" class="form-label"><i class="bi bi-bank"></i> NIT</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="number" id="numNit" name="numNit" class="form-control">
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="numTelefono" class="form-label"><i class="bi bi-telephone"></i> Telefono</label>
-                            <input type="number" id="numTelefono" name="numTelefono" class="form-control">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="numTelefono" class="form-label"><i class="bi bi-telephone"></i>
+                                    Telefono</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="number" id="numTelefono" name="numTelefono" class="form-control">
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="txtCorreoElectronico" class="form-label"><i class="bi bi-envelope-at-fill"></i>
-                                Correo electronico</label>
-                            <input type="email" id="txtCorreoElectronico" name="txtCorreoElectronico"
-                                class="form-control">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="txtCorreoElectronico" class="form-label"><i
+                                        class="bi bi-envelope-at-fill"></i> Correo electrónico</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="email" id="txtCorreoElectronico" name="txtCorreoElectronico"
+                                    class="form-control" value="<?= set_value('txtCorreoElectronico'); ?>">
+                                <div class="text-danger"><?= validation_show_error('txtCorreoElectronico'); ?></div>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="txtDireccion" class="form-label"><i class="bi bi-signpost-split"></i> Direccion
-                            </label>
-                            <input type="text" id="txtDireccion" name="txtDireccion" class="form-control">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="txtDireccion" class="form-label"><i class="bi bi-signpost-split"></i>
+                                    Direccion</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" id="txtDireccion" name="txtDireccion" class="form-control">
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="numContrasena" class="form-label"><i class="bi bi-file-lock2"></i> Contraseña
-                            </label>
-                            <input type="number" id="numContrasena" name="numContrasena" class="form-control">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3 text-center">
+                                <label for="numContrasena" class="form-label"><i class="bi bi-file-lock2"></i>
+                                    Contraseña</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="password" id="numContrasena" name="numContrasena" class="form-control">
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <input type="submit" id="btnGuardarPlan" name="btnGuardarPlan" class="form-control">
+                        <div class="col-md-12 text-center btn-grad">
+                            <button type="submit" id="btnGuardarReservaciones" name="btnGuardarReservaciones"
+                                class="btn btn-light btn-block my-2">
+                                <i class="bi bi-building-add"></i> Agregar Reservación
+                            </button>
+                            <button type="reset" id="btnLimpiarFormulario" name="btnLimpiarFormulario"
+                                class="btn btn-light btn-block my-2">
+                                <i class="bi bi-x-circle"></i> Limpiar
+                            </button>
                         </div>
                     </form>
                 </div>
+
             </div>
         </div>
     </main>

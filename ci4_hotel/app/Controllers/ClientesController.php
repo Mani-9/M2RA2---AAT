@@ -7,6 +7,7 @@ use App\Models\ClientesModel;
 
 class ClientesController extends BaseController
 {
+    protected $helpers = ['url', 'form']; 
     public function index(): string //muestra todos los clientes
     {
         $clientes = new ClientesModel();
@@ -18,6 +19,27 @@ class ClientesController extends BaseController
     }
     public function agregarCliente(){ //agrega un nuevo cliente
         $clientes = new ClientesModel();
+        $reglas =[
+            'numIdCliente'=>[
+                'label'=>'ID Cliente',
+                'rules'=>'required|is_unique[clientes.cliente_id]',
+                'errors'=>[
+                    'required'=>'* El campo {field} es obligatorio.',
+                    'is_unique'=>'* El campo {field} debe ser único.'
+                ],
+            ],
+            'txtCorreoElectronico'=>[
+                'label'=>'Correo Electrónico',
+                'rules'=>'required|valid_email',
+                'errors'=>[
+                    'required'=>'* El campo {field} es obligatorio.'
+                ],
+            ]
+        ];
+        if(!$this->validate($reglas)){
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());;
+        }
+        echo 'Datos validados';
         $datos = [
            'cliente_id'=>$this->request->getVar('numIdCliente'),
            'nombre'=>$this->request->getVAR('txtNombre'),

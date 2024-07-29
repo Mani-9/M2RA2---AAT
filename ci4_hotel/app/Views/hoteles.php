@@ -56,9 +56,14 @@
     <div class="bg bg3"></div>
 
     <main class="p-4 ">
-        <div class="d-flex justify-content-center ">
-            <h1 class="p-2 col-12 col-md-6 col-lg-4 text-center">Hoteles</h1>
+        <div class="container ">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center contentmod">
+                    <h1 class="display-4">Hoteles</h1>
+                </div>
+            </div>
         </div>
+
         <div class="d-flex justify-content-end flex-wrap">
             <a href="<?php echo base_url('agregar_hotel'); ?>"
                 class="btn btn-dark  mt-2 m-2 d-flex align-items-center ">
@@ -94,7 +99,7 @@
                         <th><i class="bi bi-compass"></i> ID ciudad: </th>
                         <th><i class="bi bi-tags"></i> ID categoria: </th>
                         <th><i class="bi bi-person-badge-fill"></i> ID usuario: </th>
-                        <th><i class="bi bi-pencil"></i> / <i class="bi bi-trash3-fill"></i> Accion: </th>
+                        <th><i class="bi bi-pencil"></i> / <i class="bi bi-trash3-fill"></i> Editar/Eliminar </th>
                     </tr>
                 </thead>
                 <?php
@@ -126,11 +131,34 @@
                         <td>
                             <?php echo $hoteles['usuario_id'] ?>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <a href="<?= base_url('buscar_hotel/').$hoteles['hotel_id']?>" class="btn btn-info"><i
-                                    class="bi bi-pencil-square"></i>Editar</a>
-                            <a href="<?= base_url('eliminar_hotel/').$hoteles['hotel_id']?>" class="btn btn-danger"><i
-                                    class="bi bi-trash-fill"></i>Eliminar</a>
+                                    class="bi bi-pencil-square"></i></a>
+                            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                data-hotel-id="<?= $hoteles['hotel_id'] ?>">
+                                <i class="bi bi-trash-fill"></i> 
+                            </a>
+                            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="deleteModalLabel">Confirmar Eliminación</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ¿Estás seguro de que deseas eliminar este hotel?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Cancelar</button>
+                                            <a href="<?= base_url('eliminar_hotel/').$hoteles['hotel_id']?>"
+                                                class="btn btn-danger"><i class="bi bi-trash-fill"></i>Eliminar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -140,6 +168,7 @@
             </table>
         </div>
     </main>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
